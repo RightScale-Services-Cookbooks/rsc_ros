@@ -7,9 +7,15 @@ provisioner:
 
 platforms:
   - name: ubuntu-14.04
+  - name: centos-6.6
 
 suites:
   - name: default
     run_list:
-      - recipe[rsc_ros::default]
+      - recipe[rsc_ros::install_ruby]
+      - recipe[rsc_ros::install_fog]
+      - recipe[rsc_ros::configure_fog]
     attributes:
+      rsc_ros:
+        access_key: <%= ENV['AWS_ACCESS_KEY'] %>
+        secret_key: <%= ENV['AWS_SECRET_KEY'] %>
