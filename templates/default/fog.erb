@@ -1,6 +1,6 @@
 :default:
-  :aws_access_key_id: <% if @provider == "aws" %><%= @access_key %><% end %>
-  :aws_secret_access_key: <% if @provider == "aws" %><%= @secret_key %><% end %>
+  :aws_access_key_id: <% if @provider == "AWS" %><%= @access_key %><% end %>
+  :aws_secret_access_key: <% if @provider == "AWS" %><%= @secret_key %><% end %>
   :bluebox_api_key:
   :bluebox_customer_id:
   :brightbox_client_id:
@@ -12,8 +12,8 @@
   :google_client_email:
   :google_key_location:
   :google_project:
-  :google_storage_access_key_id: <% if @provider == "google" %><%= @access_key %><% end %>
-  :google_storage_secret_access_key: <% if @provider == "google" %><%= @secret_key %><% end %>
+  :google_storage_access_key_id: <% if @provider == "Google" %><%= @access_key %><% end %>
+  :google_storage_secret_access_key: <% if @provider == "Google" %><%= @secret_key %><% end %>
   :hp_access_key:
   :hp_secret_key:
   :hp_tenant_id:
@@ -33,8 +33,8 @@
   :ovirt_password:
   :ovirt_url:
   :libvirt_uri:
-  :rackspace_api_key: <% if @provider == "rackspace" %><%= @secret_key %><% end %>
-  :rackspace_username: <% if @provider == "rackspace" %><%= @access_key %><% end %>
+  :rackspace_api_key: <% if @provider == "Rackspace" %><%= @secret_key %><% end %>
+  :rackspace_username: <% if @provider == "Rackspace" %><%= @access_key %><% end %>
   :rackspace_servicenet:
   :rackspace_cdn_ssl:
   :rage4_email:

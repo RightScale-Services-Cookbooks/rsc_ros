@@ -51,3 +51,10 @@ attribute 'rsc_ros/file',
   :type         => 'string',
   :recipes      => ['rsc_ros::download_file'],
   :required     => 'required'
+
+attribute 'rsc_ros/destination',
+  :display_name => 'Destination',
+  :description  => 'Full path where file is to be downloaded (ex: /var/tmp/archive.tar.gz).',
+  :type         => 'string',
+  :recipes      => ['rsc_ros::download_file'],
+  :required     => 'required'
