@@ -7,12 +7,13 @@
 # All rights reserved - Do Not Redistribute
 #
 
-template "/tmp/fog.rb" do
-  source "fog.rb.erb"
-  mode 0700
+template "/root/.fog" do
+  source "fog.erb"
+  mode 0600
   owner "root"
   group "root"
   variables({
+    :provider   => node[:rsc_ros][:storage_provider],
     :access_key => node[:rsc_ros][:access_key],
     :secret_key => node[:rsc_ros][:secret_key]
   })

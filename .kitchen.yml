@@ -17,5 +17,6 @@ suites:
       - recipe[rsc_ros::configure_fog]
     attributes:
       rsc_ros:
+        storage_provider: "aws"
         access_key: <%= ENV['AWS_ACCESS_KEY'] %>
         secret_key: <%= ENV['AWS_SECRET_KEY'] %>
