@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+require 'fog'
+
+# create a connection
+connection = Fog::Storage.new({ :provider => '<%= @provider %>' })
+
+bucket = connection.directories.get("<%= @bucket %>")
+file   = bucket.files.get("<%= @file %>")
+dest   = File.open("<%= @destination %>")
+
+dest.write(file.body)
+dest.close
