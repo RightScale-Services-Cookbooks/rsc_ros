@@ -15,9 +15,10 @@ suites:
       - recipe[rsc_ros::install_ruby]
       - recipe[rsc_ros::install_fog]
       - recipe[rsc_ros::configure_fog]
+      - recipe[rsc_ros::download]
     attributes:
       rsc_ros:
-        storage_provider: "aws"
+        storage_provider: "AWS"
         access_key: <%= ENV['AWS_ACCESS_KEY'] %>
         secret_key: <%= ENV['AWS_SECRET_KEY'] %>
         bucket: "stefhen-rightscale"

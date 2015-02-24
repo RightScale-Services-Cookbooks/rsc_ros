@@ -14,13 +14,14 @@ recipe 'rsc_ros::default'       , 'Install and configure Fog, download file from
 recipe 'rsc_ros::configure_fog' , 'Configure .fog credentials file.'
 recipe 'rsc_ros::install_fog'   , 'Install fog and associated gems.'
 recipe 'rsc_ros::install_ruby'  , 'Install ruby if needed'
+recipe 'rsc_ros::download'      , 'Download file from bucket.'
 
 attribute 'rsc_ros/storage_provider',
   :display_name => 'Storage Provider',
   :description  => 'Storage provider which houses file to download.',
   :type         => 'string',
   :recipes      => ['rsc_ros::configure_fog'],
-  :choice       => ['aws', 'rackspace', 'google'],
+  :choice       => ['AWS', 'Google', 'Rackspace'],
   :required     => 'required'
 
 attribute 'rsc_ros/access_key',
