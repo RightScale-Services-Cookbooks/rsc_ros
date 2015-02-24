@@ -31,3 +31,17 @@ attribute 'rsc_ros/secret_key',
   :type         => 'string',
   :recipes      => ['rsc_ros::configure_fog'],
   :required     => 'required'
+
+attribute 'rsc_ros/bucket',
+  :display_name => 'Bucket',
+  :description  => 'Bucket from where to download data.',
+  :type         => 'string',
+  :recipes      => ['rsc_ros::download_file'],
+  :required     => 'required'
+
+attribute 'rsc_ros/file',
+  :display_name => 'File',
+  :description  => 'File to download from bucket.',
+  :type         => 'string',
+  :recipes      => ['rsc_ros::download_file'],
+  :required     => 'required'

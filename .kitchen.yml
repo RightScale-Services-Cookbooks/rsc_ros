@@ -20,3 +20,5 @@ suites:
         storage_provider: "aws"
         access_key: <%= ENV['AWS_ACCESS_KEY'] %>
         secret_key: <%= ENV['AWS_SECRET_KEY'] %>
+        bucket: "stefhen-rightscale"
+        file: "pagecounts-20081001-000000.gz"
