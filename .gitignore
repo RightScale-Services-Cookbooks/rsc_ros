@@ -1,6 +1,7 @@
 .vagrant
 /cookbooks
 .gems
+.rbenv-gemsets
 
 # Bundler
 bin/*
