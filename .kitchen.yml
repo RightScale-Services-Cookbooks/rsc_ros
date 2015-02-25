@@ -22,5 +22,5 @@ suites:
         access_key: <%= ENV['AWS_ACCESS_KEY'] %>
         secret_key: <%= ENV['AWS_SECRET_KEY'] %>
         bucket: "stefhen-rightscale"
-        file: "pagecounts-20081001-000000.gz"
+        file: "docs.tar.bz2"
         destination: "/tmp/archive_download.gz"
