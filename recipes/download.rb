@@ -7,7 +7,9 @@
 # All rights reserved - Do Not Redistribute
 #
 
-template "/tmp/rsc_ros_#{SecureRandom.urlsafe_base64}.rb" do
+download_script = "/tmp/rsc_ros_#{SecureRandom.urlsafe_base64}.rb"
+
+template "#{download_script}" do
   source "download.erb"
   owner "root"
   group "root"
@@ -21,3 +23,5 @@ template "/tmp/rsc_ros_#{SecureRandom.urlsafe_base64}.rb" do
     :destination => node[:rsc_ros][:destination]
   })
 end
+
+execute "#{download_script}"
