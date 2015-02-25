@@ -6,7 +6,7 @@ require 'fog'
 connection = Fog::Storage.new({ :provider => '<%= @provider %>' })
 
 bucket = connection.directories.get("<%= @bucket %>")
-file   = bucket.files.get("<%= @file %>")
+file   = bucket.files.get("<%= @file %>", "w")
 dest   = File.open("<%= @destination %>")
 
 dest.write(file.body)
