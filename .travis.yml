@@ -1,0 +1,10 @@
+notifications:
+  slack:
+    secure: XEZh2W6HbKLwUPEwtE5SFcc88QHNWfYXo3JwHxa100nP/+rzxtRmAeEoaXGJtC8T70YafkrlS43q4fkuAPcTfJJs1tIbo9BQaIiMtlri1uTxm0BVf5gU7LmY4wgtqz95yeWk3Tn8lGaHp0D2KCkgPEhslEaczA6AqWmVwG8Imqk=
+
+language: ruby
+rvm:
+  - 1.9.3
+
+env:
+  - CHEF_VERSION=0.10.4
