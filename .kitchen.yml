@@ -23,4 +23,4 @@ suites:
         secret_key: <%= ENV['AWS_SECRET_KEY'] %>
         bucket: "stefhen-rightscale"
         file: "docs.tar.bz2"
-        destination: "/tmp/archive_download.gz"
+        destination: "/tmp/archive_download.tar.bz2"
