@@ -1,5 +1,6 @@
 .vagrant
 /cookbooks
+.gems
 
 # Bundler
 bin/*
