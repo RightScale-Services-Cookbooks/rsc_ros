@@ -1,0 +1,7 @@
+{
+  "sources": {
+    "rsc_ros": {
+      "path": "."
+    }
+  }
+}
