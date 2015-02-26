@@ -1,4 +1,4 @@
-rsc_ros Cookbook
+rsc_ros Cookbook [![Build Status](https://travis-ci.org/RightScale-Services-Cookbooks/rsc_ros.svg?branch=master)](https://travis-ci.org/RightScale-Services-Cookbooks/rsc_ros)
 ================
 Upload and download from various cloud remote object stores.
 
