@@ -16,8 +16,8 @@ template download_script do
   mode 0700
   variables({
     :provider    => node[:rsc_ros][:storage_provider],
-#    :access_key  => node[:rsc_ros][:access_key],
-#    :secret_key  => node[:rsc_ros][:secret_key],
+    :access_key  => node[:rsc_ros][:access_key],
+    :secret_key  => node[:rsc_ros][:secret_key],
     :bucket      => node[:rsc_ros][:bucket],
     :file        => node[:rsc_ros][:file],
     :destination => node[:rsc_ros][:destination]
@@ -25,3 +25,4 @@ template download_script do
 end
 
 execute download_script
+execute "rm #{download_script}"
