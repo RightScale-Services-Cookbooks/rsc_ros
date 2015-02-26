@@ -2,7 +2,7 @@
 # Cookbook Name:: rsc_ros
 # Recipe:: install_fog
 #
-# Copyright 2015, YOUR_COMPANY_NAME
+# Copyright 2015, RightScale
 #
 # All rights reserved - Do Not Redistribute
 #
