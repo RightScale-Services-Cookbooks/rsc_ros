@@ -11,7 +11,6 @@ version          '0.1.0'
 end
 
 recipe 'rsc_ros::default'       , 'Install and configure Fog, download file from bucket.'
-recipe 'rsc_ros::configure_fog' , 'Configure .fog credentials file.'
 recipe 'rsc_ros::install_fog'   , 'Install fog and associated gems.'
 recipe 'rsc_ros::install_ruby'  , 'Install ruby if needed'
 recipe 'rsc_ros::download'      , 'Download file from bucket.'
