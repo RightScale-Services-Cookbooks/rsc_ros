@@ -8,5 +8,5 @@
 #
 
 node[:rsc_ros][:packages].each do |pkg|
-  package "#{pkg}"
+  package pkg
 end
