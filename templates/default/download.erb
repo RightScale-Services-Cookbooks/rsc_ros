@@ -3,21 +3,9 @@
 require 'fog'
 
 # create a connection
-connection = Fog::Storage.new({
-  :provider => "<%= @provider %>",
-  <% if @provider == "AWS" %>
-  :aws_access_key_id => "<%= @access_key %>",
-  :aws_secret_access_key => "<%= @secret_key %>"
-  <% end %>
-  <% if @provider == "Google" %>
-  :google_storage_access_key_id => "<%= @access_key %>",
-  :google_storage_secret_access_key => "<%= @secret_key %>"
-  <% end %>
-  <% if @provider == "Rackspace" %>
-  :rackspace_api_key => "<%= @secret_key %>",
-  :rackspace_username => "<%= @access_key %>"
-  <% end %>
-})
+connection = Fog::Storage.new(
+ <%= @credentials %>
+)
 
 bucket = connection.directories.get("<%= @bucket %>")
 file   = bucket.files.get("<%= @file %>")
