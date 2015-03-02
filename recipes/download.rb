@@ -7,7 +7,29 @@
 # All rights reserved - Do Not Redistribute
 #
 
+#INSTALL GEMS
+gem 'mixlib-cli' do
+  action :install
+  gem_binary "/usr/bin/gem"
+  options("--no-rdoc --no-ri")
+end
+
+gem 'fog' do
+  action :install
+  gem_binary "/usr/bin/gem"
+  options("--no-rdoc --no-ri")
+end
+
+chef_gem 'mixlib-cli' do
+  action :install
+end
+
+chef_gem 'fog' do
+  action :install
+end
+
 download_script = "/tmp/rsc_ros_#{SecureRandom.urlsafe_base64}.rb"
+node.default[:rsc_ros][:download_script] = download_script
 
 @credentials={}
 @credentials[:provider]=node[:rsc_ros][:storage_provider]
