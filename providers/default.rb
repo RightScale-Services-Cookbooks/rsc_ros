@@ -2,7 +2,7 @@ require 'mixlib/shellout'
 
 action :download do
   cmd='/usr/local/bin/ros_download.rb'
-  cmd+=" -c #{@new_resource.provider}"
+  cmd+=" -c #{@new_resource.storage_provider}"
   cmd+=" -u #{@new_resource.access_key}"
   cmd+=" -p #{@new_resource.secret_key}"
   cmd+=" -b #{@new_resource.bucket}"
