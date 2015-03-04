@@ -60,20 +60,22 @@ cli = MyCLI.new
 cli.parse_options
 
 @credentials={}
-@credentials[:provider]=cli.config[:cloud].downcase
 case cli.config[:cloud].downcase
 when "aws"
  @credentials={
+ :provider => "AWS",
  :aws_access_key_id => cli.config[:access_key],
  :aws_secret_access_key => cli.config[:secret_key]
  }
 when "rackspace"
  @credentials={
+ :provider => "Rackspace",
  :rackspace_username => cli.config[:access_key],
  :rackspace_api_key => cli.config[:secret_key]
  }
 when "google"
  @credentials={
+ :provider => "Google",
  :google_storage_access_key_id => cli.config[:access_key],
  :google_storage_secret_access_key => cli.config[:secret_key]
  }
