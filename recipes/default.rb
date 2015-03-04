@@ -7,7 +7,10 @@
 # All rights reserved - Do Not Redistribute
 #
 node[:rsc_ros][:packages].each do |pkg|
-  package pkg
+  p=package pkg do
+    action :nothing
+  end
+  p.run_action(:install)
 end
 
 #INSTALL GEMS
