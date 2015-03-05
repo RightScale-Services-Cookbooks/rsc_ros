@@ -11,7 +11,6 @@ version          '0.1.0'
 end
 
 recipe 'rsc_ros::default'       , 'Install and configure Fog, download file from bucket.'
-recipe 'rsc_ros::install_fog'   , 'Install fog and associated gems.'
 recipe 'rsc_ros::install_ruby'  , 'Install ruby if needed'
 recipe 'rsc_ros::download'      , 'Download file from bucket.'
 
@@ -19,41 +18,41 @@ attribute 'rsc_ros/storage_provider',
   :display_name => 'Storage Provider',
   :description  => 'Storage provider which houses file to download.',
   :type         => 'string',
-  :recipes      => ['rsc_ros::configure_fog'],
-  :choice       => ['AWS', 'Google', 'Rackspace'],
+  :recipes      => ['rsc_ros::download'],
+  :choice       => ['aws', 'google', 'rackspace'],
   :required     => 'required'
 
 attribute 'rsc_ros/access_key',
   :display_name => 'Access Key',
   :description  => 'Access key to use with storage provider.',
   :type         => 'string',
-  :recipes      => ['rsc_ros::configure_fog'],
+  :recipes      => ['rsc_ros::download'],
   :required     => 'required'
 
 attribute 'rsc_ros/secret_key',
   :display_name => 'Secret Key',
   :description  => 'Secret key to use with storage provider.',
   :type         => 'string',
-  :recipes      => ['rsc_ros::configure_fog'],
+  :recipes      => ['rsc_ros::download'],
   :required     => 'required'
 
 attribute 'rsc_ros/bucket',
   :display_name => 'Bucket',
   :description  => 'Bucket from where to download data.',
   :type         => 'string',
-  :recipes      => ['rsc_ros::download_file'],
+  :recipes      => ['rsc_ros::download'],
   :required     => 'required'
 
 attribute 'rsc_ros/file',
   :display_name => 'File',
   :description  => 'File to download from bucket.',
   :type         => 'string',
-  :recipes      => ['rsc_ros::download_file'],
+  :recipes      => ['rsc_ros::download'],
   :required     => 'required'
 
 attribute 'rsc_ros/destination',
   :display_name => 'Destination',
   :description  => 'Full path where file is to be downloaded (ex: /var/tmp/archive.tar.gz).',
   :type         => 'string',
-  :recipes      => ['rsc_ros::download_file'],
+  :recipes      => ['rsc_ros::download'],
   :required     => 'required'
