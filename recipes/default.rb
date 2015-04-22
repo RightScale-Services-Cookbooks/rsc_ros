@@ -35,32 +35,32 @@ end
 # doesn't install on Linux Base image v14.1.0 [rev 50]
 # RightImage_CentOS_6.5_x64_v14.1.3_HVM_EBS
 # Errors out on fog deps
-__END__
+#__END__
 #INSTALL GEMS
-gem 'mixlib-cli' do
-  action :install
-  gem_binary "/usr/bin/gem"
-  options("--no-rdoc --no-ri")
-end
+#gem 'mixlib-cli' do
+  #action :install
+  #gem_binary "/usr/bin/gem"
+  #options("--no-rdoc --no-ri")
+#end
 
-gem 'fog' do
-  action :install
-  gem_binary "/usr/bin/gem"
-  options("--no-rdoc --no-ri")
-end
+#gem 'fog' do
+  #action :install
+  #gem_binary "/usr/bin/gem"
+  #options("--no-rdoc --no-ri")
+#end
 
-chef_gem 'mixlib-cli' do
-  action :install
-end
+#chef_gem 'mixlib-cli' do
+  #action :install
+#end
 
-chef_gem 'fog' do
-  action :install
-end
+#chef_gem 'fog' do
+  #action :install
+#end
 
-cookbook_file "/usr/local/bin/ros_download.rb" do
-  source "ros_download.rb"
-  owner "root"
-  group "root"
-  mode 0755
-  action :create
-end
+#cookbook_file "/usr/local/bin/ros_download.rb" do
+  #source "ros_download.rb"
+  #owner "root"
+  #group "root"
+  #mode 0755
+  #action :create
+#end
