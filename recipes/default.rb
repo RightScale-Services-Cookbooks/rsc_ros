@@ -17,7 +17,7 @@ end
 
 # Install gem deps
 node[:rsc_ros][:gems].each do |g|
-  gem g do
+  gem_package g do
     gem_binary "/usr/bin/gem"
     options("--no-rdoc --no-ri")
     action :install
