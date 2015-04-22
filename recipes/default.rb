@@ -25,6 +25,14 @@ node[:rsc_ros][:gems].each do |g|
 end
 
 
+cookbook_file "/usr/local/bin/ros_download.rb" do
+  source "ros_download.rb"
+  owner "root"
+  group "root"
+  mode 0755
+  action :create
+end
+
 
 
 
