@@ -1,4 +1,4 @@
-#!/opt/rightscale/sandbox/bin/ruby
+#!/usr/bin/env ruby
 
 require 'rubygems'
 require 'fog'
