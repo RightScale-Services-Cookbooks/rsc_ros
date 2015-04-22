@@ -1,7 +1,0 @@
-DEPENDENCIES
-  rsc_ros
-    path: .
-    metadata: true
-
-GRAPH
-  rsc_ros (0.1.0)
