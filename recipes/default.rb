@@ -6,13 +6,36 @@
 #
 # All rights reserved - Do Not Redistribute
 #
+
+# Install package deps
 node[:rsc_ros][:packages].each do |pkg|
-  p=package pkg do
+  p = package pkg do
     action :nothing
   end
   p.run_action(:install)
 end
 
+# Install gem deps
+node[:rsc_ros][:gems].each do |g|
+  gem g do
+    gem_binary "/usr/bin/gem"
+    options("--no-rdoc --no-ri")
+    action :install
+  end
+end
+
+
+
+
+
+
+
+
+
+# doesn't install on Linux Base image v14.1.0 [rev 50]
+# RightImage_CentOS_6.5_x64_v14.1.3_HVM_EBS
+# Errors out on fog deps
+__END__
 #INSTALL GEMS
 gem 'mixlib-cli' do
   action :install

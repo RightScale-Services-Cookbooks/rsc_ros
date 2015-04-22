@@ -10,7 +10,7 @@ version          '0.1.0'
   supports os
 end
 
-recipe 'rsc_ros::default'       , 'Install and configure Fog, download file from bucket.'
+recipe 'rsc_ros::default'       , 'Install and configure Fog.'
 recipe 'rsc_ros::download'      , 'Download file from bucket.'
 
 attribute 'rsc_ros/storage_provider',
