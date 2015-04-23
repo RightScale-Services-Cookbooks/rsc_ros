@@ -1,4 +1,4 @@
-source 'https://supermarket.chef.io'
+source 'https://rubygems.org'
 
 gem 'berkshelf'
 gem 'thor-foodcritic'
