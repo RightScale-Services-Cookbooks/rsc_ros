@@ -6,7 +6,7 @@ language: ruby
 rvm:
   - 2.0.0
   - 1.9.3
-before_install: gem update bundler
+before_install: gem update berks
 before_script: bundle exec berks install
 script: bundle exec strainer test --except kitchen
 
