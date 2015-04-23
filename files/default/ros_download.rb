@@ -12,37 +12,37 @@ class MyCLI
     :short       => "-c cloud",
     :long        => "--cloud cloud",
     :required    => true,
-    :description => "Cloud name, aws,rackspacke,google"
+    :description => "Cloud name: aws, rackspace, google"
 
   option :access_key,
     :short       => "-u access_key",
     :long        => "--user ACCESS_KEY",
     :required    => true,
-    :description => "access_key,aws_access_key,username, etc"
+    :description => "access_key: aws_access_key, username, etc"
 
   option :secret_key,
     :short       => "-p secret_access_key",
     :long        => "--pass secret_access_key",
     :required    => true,
-    :description => "secret_access_key, api_key, password, etc"
+    :description => "secret_access_key: api_key, password, etc"
 
   option :bucket,
     :short       => "-b bucket",
     :long        => "--bucket bucket",
     :required    => true,
-    :description => "bucket name holding file"
+    :description => "bucket: Container where file is stored"
 
   option :file,
     :short       => "-f file_name",
     :long        => "--file file_name",
     :required    => true,
-    :description => "file to download"
+    :description => "File to download"
 
   option :destination,
     :short       => "-d destination",
     :long        => "--destination destination",
     :required    => true,
-    :description => "download_location"
+    :description => "Full path to download file (eg: /tmp/file.tar)"
 
   option :help,
     :short        => "-h",
