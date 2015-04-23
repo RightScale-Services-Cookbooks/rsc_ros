@@ -69,12 +69,14 @@ when "aws"
 
 when "rackspace"
   @credentials={
+    :provider           => "Rackspace",
     :rackspace_username => cli.config[:access_key],
     :rackspace_api_key  => cli.config[:secret_key]
   }
 
 when "google"
   @credentials={
+    :provider                         => "Google",
     :google_storage_access_key_id     => cli.config[:access_key],
     :google_storage_secret_access_key => cli.config[:secret_key]
   }
