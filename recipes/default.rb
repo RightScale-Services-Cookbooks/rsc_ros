@@ -16,14 +16,14 @@ node[:rsc_ros][:packages].each do |pkg|
 end
 
 # Install gem deps
-node[:rsc_ros][:gems].each do |g|
+node[:rsc_ros][:gems].each_pair do |g, v|
   gem_package g do
     gem_binary "/usr/bin/gem"
+    version v
     options("--no-rdoc --no-ri")
     action :install
   end
 end
-
 
 cookbook_file "/usr/local/bin/ros_download.rb" do
   source "ros_download.rb"
