@@ -8,7 +8,7 @@
 #
 
 # Install package deps
-node[:rsc_ros][:packages].each do |pkg|
+node['rsc_ros']['packages'].each do |pkg|
   p = package pkg do
     action :nothing
   end
@@ -16,7 +16,7 @@ node[:rsc_ros][:packages].each do |pkg|
 end
 
 # Install gem deps
-node[:rsc_ros][:gems].each_pair do |g, v|
+node['rsc_ros']['gems'].each_pair do |g, v|
   gem_package g do
     gem_binary "/usr/bin/gem"
     version v
