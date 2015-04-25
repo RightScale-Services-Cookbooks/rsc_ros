@@ -20,4 +20,9 @@ describe 'rsc_ros::default' do
     expect(chef_run_centos).to install_package("ruby19-devel")
     expect(chef_run_centos).to install_package("gcc-c++")
   end
+
+  it 'installs required gems' do
+    expect(chef_run_ubuntu).to install_gem_package("fog")
+    expect(chef_run_ubuntu).to install_gem_package("mixlib-cli")
+  end
 end
