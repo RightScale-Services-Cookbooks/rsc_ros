@@ -1,4 +1,4 @@
-require_relative 'spec_helper'
+require 'spec_helper'
 
 describe 'rsc_ros::default' do
   let(:chef_run_ubuntu) { ChefSpec::Runner.new(platform: 'ubuntu', version: '14.04').converge(described_recipe) }

@@ -1,4 +1,4 @@
-require_relative 'spec_helper'
+require 'spec_helper'
 
 describe 'rsc_ros::download' do
   let(:chef_run) do
