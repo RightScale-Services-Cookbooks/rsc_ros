@@ -10,4 +10,8 @@ describe 'rsc_ros::download' do
   it 'includes the default recipe' do
     expect(chef_run).to include_recipe('rsc_ros::default')
   end
+
+  it 'created /tmp/filename' do
+    expect(chef_run).to create_file('/tmp/filename')
+  end
 end
