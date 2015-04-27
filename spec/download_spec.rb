@@ -12,6 +12,6 @@ describe 'rsc_ros::download' do
   end
 
   it 'created /tmp/filename' do
-    expect(chef_run).to create_file('/tmp/filename')
+    expect(chef_run).to download_rsc_ros(chef_run.node['rsc_ros']['destination'])
   end
 end
