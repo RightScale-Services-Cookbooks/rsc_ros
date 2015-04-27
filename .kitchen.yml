@@ -35,3 +35,16 @@ suites:
         bucket: "rightscale-services"
         file: "kitchen/docs.tar.bz2"
         destination: "/tmp/archive_download.tar.bz2"
+
+  - name: rackspace
+    run_list:
+      - recipe[rsc_ros::default]
+      - recipe[rsc_ros::download]
+    attributes:
+      rsc_ros:
+        storage_provider: "rackspace"
+        access_key: <%= ENV['RACKSPACE_USERNAME'] %>
+        secret_key: <%= ENV['RACKSPACE_API_KEY'] %>
+        bucket: "rightscale-services"
+        file: "kitchen/docs.tar.bz2"
+        destination: "/tmp/archive_download.tar.bz2"
