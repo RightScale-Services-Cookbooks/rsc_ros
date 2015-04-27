@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'rsc_ros::download' do
   let(:chef_run) do
     ChefSpec::Runner.new(platform: 'centos', version: '6.5') do |node|
-      node.set['rsc_ros']['destination'] = '/tmp/filename'
+      node.set['rsc_ros']['destination'] = '/tmp/archive_download.tar.bz2'
     end.converge(described_recipe)
   end
 
