@@ -11,7 +11,7 @@ describe 'rsc_ros::download' do
     expect(chef_run).to include_recipe('rsc_ros::default')
   end
 
-  it 'created /tmp/filename' do
+  it 'downloads a file from the cloud' do
     expect(chef_run).to download_rsc_ros(chef_run.node['rsc_ros']['destination'])
   end
 end
