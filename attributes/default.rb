@@ -5,7 +5,7 @@ when "ubuntu", "debian"
 
 when "redhat", "centos"
   # Tested with: Base ServerTemplate for Linux (v14.1.0) [rev 50] / CentOS 6.5
-  default['rsc_ros']['packages'] = %w[ruby19 ruby19-devel gcc-c++]
+  default['rsc_ros']['packages'] = %w[ruby19 ruby19-devel gcc-c++ zlib-devel]
 else
   raise "Sorry #{node['platform']} is not supported ..."
 end
