@@ -20,6 +20,7 @@ describe 'rsc_ros::default' do
     expect(chef_run_centos).to install_package('ruby19-devel')
     expect(chef_run_centos).to install_package('gcc-c++')
     expect(chef_run_centos).to install_package('zlib-devel')
+    expect(chef_run_centos).to install_package('patch')
   end
 
   it 'installs required gems' do
