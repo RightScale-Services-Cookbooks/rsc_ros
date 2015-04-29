@@ -4,6 +4,6 @@ baseurl = http://island10.rightscale.com/rightscale_software/epel/6/x86_64/archi
 failovermethod=priority
 gpgcheck=1
 enabled=1
-gpgkey=/etc/pkg-rpm-gpg/RPM-GPG-KEY-RightScale
+gpgkey=
 # set metadata to expire faster then main
 metadata_expire=30
