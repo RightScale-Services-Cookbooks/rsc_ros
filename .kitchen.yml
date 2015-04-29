@@ -12,6 +12,7 @@ platforms:
 suites:
   - name: aws
     run_list:
+      - recipe[fake::install_rightscale_epel]
       - recipe[rsc_ros::default]
       - recipe[rsc_ros::download]
     attributes:
