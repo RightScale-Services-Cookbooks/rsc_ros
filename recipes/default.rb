@@ -9,10 +9,9 @@
 
 # Install package deps
 node['rsc_ros']['packages'].each do |pkg|
-  p = package pkg do
-    action :nothing
+  package pkg do
+    action :install
   end
-  p.run_action(:install)
 end
 
 # Install gem deps
