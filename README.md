@@ -1,19 +1,37 @@
 rsc_ros Cookbook [![Build Status](https://travis-ci.org/RightScale-Services-Cookbooks/rsc_ros.svg?branch=master)](https://travis-ci.org/RightScale-Services-Cookbooks/rsc_ros)
 ================
-Upload and download from various cloud remote object stores.
+Download from various cloud remote object stores.
 
 
 Requirements
 ------------
-TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
+This cookbook primarily depends on the [fog](http://fog.io) library. This cookbook will install fog and dependencies at boot time.
 
-e.g.
-#### packages
-- `toaster` - rsc_ros needs toaster to brown your bagel.
 
-Attributes
-----------
-TODO: List your cookbook attributes here.
+**NOTE**: This cookbook depends on **version 1.29.0** of fog. If you are using a default *v14.1.0* RightScale ServerTemplate, then you must update your *RubyGems* repo in your ServerTemplate to at least *2015-04-23* so that this version of fog can be installed.
+
+This cookbook has been verified to work with:
+* Ubuntu 14.04
+* CentOS 6.5
+
+Recipes
+-------
+
+| Name              | Description                                |
+|-------------------|--------------------------------------------|
+| rsc_ros::default  | Download and install fog and dependencies. |
+| rsc_ros::download | Download file from remote object store.    |
+
+
+Inputs
+------
+
+attribute 'rsc_ros/storage_provider',
+attribute 'rsc_ros/access_key',
+attribute 'rsc_ros/secret_key',
+attribute 'rsc_ros/bucket',
+attribute 'rsc_ros/file',
+attribute 'rsc_ros/destination',
 
 e.g.
 #### rsc_ros::default
