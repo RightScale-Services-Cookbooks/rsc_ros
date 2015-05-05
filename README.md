@@ -26,29 +26,15 @@ Recipes
 Inputs
 ------
 
-attribute 'rsc_ros/storage_provider',
-attribute 'rsc_ros/access_key',
-attribute 'rsc_ros/secret_key',
-attribute 'rsc_ros/bucket',
-attribute 'rsc_ros/file',
-attribute 'rsc_ros/destination',
 
-e.g.
-#### rsc_ros::default
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['rsc_ros']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
-  </tr>
-</table>
+| Name                     | Description                                                               |
+|--------------------------|---------------------------------------------------------------------------|
+| rsc_ros/storage_provider | Supported storage provider to download remote file from.                  |
+| rsc_ros/access_key       | Access key to authenticate with remote object store.                      |
+| rsc_ros/secret_key       | Secret key to authenticate with remote object store.                      |
+| rsc_ros/bucket           | Bucket / container to download remote object from.                        |
+| rsc_ros/file             | File to download from remote container.                                   |
+| rsc_ros/destination      | Location on local instance to download file (ex: /var/tmp/archive.tar.gz) |
 
 Usage
 -----
