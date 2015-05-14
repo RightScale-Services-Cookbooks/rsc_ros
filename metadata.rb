@@ -12,6 +12,7 @@ end
 
 recipe 'rsc_ros::default'       , 'Install and configure Fog.'
 recipe 'rsc_ros::download'      , 'Download file from bucket.'
+recipe 'rsc_ros::upload'        , 'Upload file from filesystem'
 
 attribute 'rsc_ros/storage_provider',
   :display_name => 'Storage Provider',

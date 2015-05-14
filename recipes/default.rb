@@ -24,8 +24,8 @@ node['rsc_ros']['gems'].each_pair do |g, v|
   end
 end
 
-cookbook_file "/usr/local/bin/ros_download.rb" do
-  source "ros_download.rb"
+cookbook_file "/usr/local/bin/ros.rb" do
+  source "ros.rb"
   owner "root"
   group "root"
   mode 0755

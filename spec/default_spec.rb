@@ -28,7 +28,7 @@ describe 'rsc_ros::default' do
     expect(chef_run_ubuntu).to install_gem_package('mixlib-cli')
   end
 
-  it 'creates /usr/local/bin/ros_download.rb' do
-    expect(chef_run_ubuntu).to create_cookbook_file('/usr/local/bin/ros_download.rb')
+  it 'creates /usr/local/bin/ros.rb' do
+    expect(chef_run_ubuntu).to create_cookbook_file('/usr/local/bin/ros.rb')
   end
 end

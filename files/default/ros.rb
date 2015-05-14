@@ -8,6 +8,12 @@ require 'mixlib/cli'
 class MyCLI
   include Mixlib::CLI
 
+  option :get_put,
+    :short => "-t type",
+    :long => "--type type",
+    :required => true,
+    :description => "type: download, upload, sync_up, sync_down"
+
   option :provider,
     :short       => "-c cloud",
     :long        => "--cloud cloud",
@@ -41,7 +47,7 @@ class MyCLI
   option :destination,
     :short       => "-d destination",
     :long        => "--destination destination",
-    :required    => true,
+    :required    => false,
     :description => "Full path to download file (eg: /tmp/file.tar)"
 
   option :help,
@@ -54,39 +60,80 @@ class MyCLI
     :exit         => 0
 end
 
-#create a connection
-cli = MyCLI.new
-cli.parse_options
+#create a @connection
+@cli = MyCLI.new
+@cli.parse_options
 
 @credentials={}
-case cli.config[:provider].downcase
+case @cli.config[:provider].downcase
 when "aws"
   @credentials={
     :provider              => "AWS",
-    :aws_access_key_id     => cli.config[:access_key],
-    :aws_secret_access_key => cli.config[:secret_key]
+    :aws_access_key_id     => @cli.config[:access_key],
+    :aws_secret_access_key => @cli.config[:secret_key]
   }
 
 when "rackspace"
   @credentials={
     :provider           => "Rackspace",
-    :rackspace_username => cli.config[:access_key],
-    :rackspace_api_key  => cli.config[:secret_key]
+    :rackspace_username => @cli.config[:access_key],
+    :rackspace_api_key  => @cli.config[:secret_key]
   }
 
 when "google"
   @credentials={
     :provider                         => "Google",
-    :google_storage_access_key_id     => cli.config[:access_key],
-    :google_storage_secret_access_key => cli.config[:secret_key]
+    :google_storage_access_key_id     => @cli.config[:access_key],
+    :google_storage_secret_access_key => @cli.config[:secret_key]
   }
 end
 
-connection = Fog::Storage.new(@credentials)
+@connection = Fog::Storage.new(@credentials)
 
-bucket = connection.directories.get(cli.config[:bucket])
-file   = bucket.files.get(cli.config[:file])
-dest   = File.open(cli.config[:destination], "w")
 
-dest.write(file.body)
-dest.close
+def download_file()
+  bucket = @connection.directories.get(@cli.config[:bucket])
+  file   = bucket.files.get(@cli.config[:file])
+  dest   = File.open(@cli.config[:destination], "w")
+
+  dest.write(file.body)
+  dest.close
+end
+
+def upload_file()
+  dirs = []
+  @connection.directories.each { |dir| dirs<<dir.key }
+  if dirs.include?(@cli.config[:bucket])
+    bucket = @connection.directories.get(@cli.config[:bucket])
+  else
+    bucket = @connection.directories.create(:key => @cli.config[:bucket])
+  end
+  file = bucket.files.create(
+    :key    => File.basename(@cli.config[:file]),
+    :body   => File.open(@cli.config[:file])
+  )
+  file.save
+end
+
+def sync_up()
+  puts 'not implemented yet'
+end
+
+def sync_down()
+  puts 'not implemented yet'
+end
+
+def init(type)
+  case type
+  when 'download'
+    download_file
+  when 'upload'
+    upload_file
+  when 'sync_up'
+    sync_up
+  when 'sync_down'
+    sync_down
+  end
+end
+
+init(@cli.config[:get_put])
