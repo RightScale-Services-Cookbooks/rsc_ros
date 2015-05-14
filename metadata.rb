@@ -4,7 +4,7 @@ maintainer_email 'ps@rightscale.com'
 license          'All rights reserved'
 description      'Installs/Configures rsc_ros'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '0.2.0'
+version          '0.2.1'
 
 %w{ centos ubuntu }.each do |os|
   supports os
@@ -12,6 +12,7 @@ end
 
 recipe 'rsc_ros::default'       , 'Install and configure Fog.'
 recipe 'rsc_ros::download'      , 'Download file from bucket.'
+recipe 'rsc_ros::upload'        , 'Upload file from filesystem'
 
 attribute 'rsc_ros/storage_provider',
   :display_name => 'Storage Provider',
