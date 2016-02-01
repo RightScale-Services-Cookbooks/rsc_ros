@@ -10,4 +10,4 @@ else
   raise "Sorry #{node['platform']} is not supported ..."
 end
 
-default['rsc_ros']['gems'] = { "fog" => "1.29.0", "mixlib-cli" => "1.5.0" }
+default['rsc_ros']['gems'] = { "fog" => "1.36.0", "mixlib-cli" => "1.5.0", 'mime-types'=>'1.25.0' }

@@ -3,6 +3,7 @@
 require 'rubygems'
 require 'fog'
 require 'mixlib/cli'
+require 'mime-types'
 #setup options
 
 class MyCLI
