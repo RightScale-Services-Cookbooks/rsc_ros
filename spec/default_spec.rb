@@ -26,6 +26,7 @@ describe 'rsc_ros::default' do
   it 'installs required gems' do
     expect(chef_run_ubuntu).to install_gem_package('fog')
     expect(chef_run_ubuntu).to install_gem_package('mixlib-cli')
+    expect(chef_run_ubuntu).to install_gem_package('mime-types')
   end
 
   it 'creates /usr/local/bin/ros.rb' do
