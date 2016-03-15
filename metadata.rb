@@ -4,7 +4,7 @@ maintainer_email 'ps@rightscale.com'
 license          'All rights reserved'
 description      'Installs/Configures rsc_ros'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '0.3.0'
+version          '0.4.0'
 
 %w{ centos ubuntu }.each do |os|
   supports os
@@ -56,3 +56,10 @@ attribute 'rsc_ros/destination',
   :type         => 'string',
   :recipes      => ['rsc_ros::download'],
   :required     => 'required'
+
+  attribute 'rsc_ros/region',
+    :display_name => 'Region',
+    :description  => 'Cloud region',
+    :type         => 'string',
+    :recipes      => ['rsc_ros::download'],
+    :required     => 'optional'

@@ -7,3 +7,4 @@ attribute :secret_key, :kind_of => String, :default => "",:required => true
 attribute :bucket, :kind_of => String, :default => "",:required => true
 attribute :file, :kind_of => String, :default => "",:required => true
 attribute :destination, :kind_of => String, :default => "", :name_attribute => true,:required => true
+attribute :region, :kind_of => String, :default => "", :name_attribute => true,:required => false
