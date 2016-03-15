@@ -6,5 +6,6 @@ rsc_ros node['rsc_ros']['file'] do
   secret_key        node['rsc_ros']['secret_key']
   bucket            node['rsc_ros']['bucket']
   file              node['rsc_ros']['file']
+  region            node['rsc_ros']['region']
   action            :upload
 end

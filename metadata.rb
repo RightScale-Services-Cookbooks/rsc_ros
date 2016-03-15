@@ -4,7 +4,7 @@ maintainer_email 'ps@rightscale.com'
 license          'All rights reserved'
 description      'Installs/Configures rsc_ros'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '0.3.0'
+version          '0.4.0'
 
 %w{ centos ubuntu }.each do |os|
   supports os
@@ -18,7 +18,7 @@ attribute 'rsc_ros/storage_provider',
   :display_name => 'Storage Provider',
   :description  => 'Storage provider which houses file to download.',
   :type         => 'string',
-  :recipes      => ['rsc_ros::download'],
+  :recipes      => ['rsc_ros::download','rsc_ros::upload'],
   :choice       => ['aws', 'google', 'rackspace'],
   :required     => 'required'
 
@@ -26,28 +26,28 @@ attribute 'rsc_ros/access_key',
   :display_name => 'Access Key',
   :description  => 'Access key to use with storage provider.',
   :type         => 'string',
-  :recipes      => ['rsc_ros::download'],
+  :recipes      => ['rsc_ros::download','rsc_ros::upload'],
   :required     => 'required'
 
 attribute 'rsc_ros/secret_key',
   :display_name => 'Secret Key',
   :description  => 'Secret key to use with storage provider.',
   :type         => 'string',
-  :recipes      => ['rsc_ros::download'],
+  :recipes      => ['rsc_ros::download','rsc_ros::upload'],
   :required     => 'required'
 
 attribute 'rsc_ros/bucket',
   :display_name => 'Bucket',
   :description  => 'Bucket from where to download data.',
   :type         => 'string',
-  :recipes      => ['rsc_ros::download'],
+  :recipes      => ['rsc_ros::download','rsc_ros::upload'],
   :required     => 'required'
 
 attribute 'rsc_ros/file',
   :display_name => 'File',
-  :description  => 'File to download from bucket.',
+  :description  => 'File to download/upload.',
   :type         => 'string',
-  :recipes      => ['rsc_ros::download'],
+  :recipes      => ['rsc_ros::download','rsc_ros::upload'],
   :required     => 'required'
 
 attribute 'rsc_ros/destination',
@@ -56,3 +56,10 @@ attribute 'rsc_ros/destination',
   :type         => 'string',
   :recipes      => ['rsc_ros::download'],
   :required     => 'required'
+
+  attribute 'rsc_ros/region',
+    :display_name => 'Region',
+    :description  => 'Cloud region',
+    :type         => 'string',
+    :recipes      => ['rsc_ros::download','rsc_ros::upload'],
+    :required     => 'optional'

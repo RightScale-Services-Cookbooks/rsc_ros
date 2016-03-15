@@ -51,6 +51,12 @@ class MyCLI
     :required    => false,
     :description => "Full path to download file (eg: /tmp/file.tar)"
 
+  option :region,
+    :short       => "-r region",
+    :long        => "--region region",
+    :required    => false,
+    :description => "cloud region: us-west-1, us-west-2 etc"
+
   option :help,
     :short        => "-h",
     :long         => "--help",
@@ -71,7 +77,8 @@ when "aws"
   @credentials={
     :provider              => "AWS",
     :aws_access_key_id     => @cli.config[:access_key],
-    :aws_secret_access_key => @cli.config[:secret_key]
+    :aws_secret_access_key => @cli.config[:secret_key],
+    :region                => @cli.config[:region]
   }
 
 when "rackspace"
@@ -88,7 +95,6 @@ when "google"
     :google_storage_secret_access_key => @cli.config[:secret_key]
   }
 end
-
 @connection = Fog::Storage.new(@credentials)
 
 

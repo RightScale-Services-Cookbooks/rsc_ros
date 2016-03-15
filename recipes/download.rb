@@ -7,5 +7,6 @@ rsc_ros node['rsc_ros']['destination'] do
   bucket            node['rsc_ros']['bucket']
   file              node['rsc_ros']['file']
   destination       node['rsc_ros']['destination']
+  region            node['rsc_ros']['region']
   action            :download
 end
