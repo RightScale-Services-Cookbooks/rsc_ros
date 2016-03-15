@@ -95,7 +95,6 @@ when "google"
     :google_storage_secret_access_key => @cli.config[:secret_key]
   }
 end
-puts "################ @credentials #{@credentials}"
 @connection = Fog::Storage.new(@credentials)
 
 
