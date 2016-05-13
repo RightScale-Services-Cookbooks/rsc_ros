@@ -7,5 +7,6 @@ rsc_ros node['rsc_ros']['file'] do
   bucket            node['rsc_ros']['bucket']
   file              node['rsc_ros']['file']
   region            node['rsc_ros']['region']
+  timeout            node['rsc_ros']['timeout']
   action            :upload
 end
