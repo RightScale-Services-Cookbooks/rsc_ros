@@ -63,3 +63,11 @@ attribute 'rsc_ros/destination',
     :type         => 'string',
     :recipes      => ['rsc_ros::download','rsc_ros::upload'],
     :required     => 'optional'
+
+  attribute 'rsc_ros/timeout',
+    :display_name => 'Timeout',
+    :description  => 'command timeout',
+    :type         => 'integer',
+    :default	  => 1200,
+    :recipes      => ['rsc_ros::download','rsc_ros::upload'],
+    :required     => 'optional'
