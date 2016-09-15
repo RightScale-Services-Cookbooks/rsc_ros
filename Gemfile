@@ -14,4 +14,6 @@ group :integration do
   gem 'chefspec', '~> 3.4.0'
   gem 'travis-lint'
   gem 'rspec-expectations', '~> 2.14.0'
+  gem 'buff-ignore','1.1.1'
+  gem 'rack', '1.6.4'
 end
