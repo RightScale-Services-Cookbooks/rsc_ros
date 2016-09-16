@@ -1,7 +1,6 @@
 require 'mixlib/shellout'
 
 action :download do
-  Chef::Log.info("REGION #{new_resource.inspect}")
   cmd='/usr/local/bin/ros.rb'
   cmd+=' -t download'
   cmd+=" -c #{@new_resource.storage_provider}"
