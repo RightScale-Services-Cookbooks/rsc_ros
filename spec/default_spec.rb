@@ -5,8 +5,7 @@ describe 'rsc_ros::default' do
   let(:chef_run_centos) { ChefSpec::Runner.new(platform: 'centos', version: '6.5').converge(described_recipe) }
 
   it 'installs required ubuntu packages' do
-    expect(chef_run_ubuntu).to install_package('ruby')
-    expect(chef_run_ubuntu).to install_package('ruby-dev')
+
     expect(chef_run_ubuntu).to install_package('make')
     expect(chef_run_ubuntu).to install_package('autoconf')
     expect(chef_run_ubuntu).to install_package('automake')
@@ -16,8 +15,6 @@ describe 'rsc_ros::default' do
   end
 
   it 'installs required centos packages' do
-    expect(chef_run_centos).to install_package('ruby19')
-    expect(chef_run_centos).to install_package('ruby19-devel')
     expect(chef_run_centos).to install_package('gcc-c++')
     expect(chef_run_centos).to install_package('zlib-devel')
     expect(chef_run_centos).to install_package('patch')
