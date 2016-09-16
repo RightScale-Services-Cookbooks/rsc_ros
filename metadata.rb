@@ -4,11 +4,7 @@ maintainer_email 'ps@rightscale.com'
 license          'All rights reserved'
 description      'Installs/Configures rsc_ros'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-<<<<<<< Updated upstream
-version          '0.6.0'
-=======
 version          '0.7.0'
->>>>>>> Stashed changes
 
 %w{ centos ubuntu }.each do |os|
   supports os
