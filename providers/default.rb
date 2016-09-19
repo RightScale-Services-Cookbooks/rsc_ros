@@ -9,7 +9,7 @@ action :download do
   cmd+=" -b #{@new_resource.bucket}"
   cmd+=" -f #{@new_resource.file}"
   cmd+=" -d #{@new_resource.destination}"
-  cmd+=" -r #{@new_resource.region}"
+  cmd+=" -r #{@new_resource.region}" if @new_resource.region
   result=Mixlib::ShellOut.new(cmd, timeout: @new_resource.timeout).run_command
   Chef::Log.info "cmd:#{cmd}, STDOUT:#{result.stdout}, STDERR:#{result.stderr}"
   result.error!
@@ -24,7 +24,7 @@ action :upload do
   cmd+=" -p #{@new_resource.secret_key}"
   cmd+=" -b #{@new_resource.bucket}"
   cmd+=" -f #{@new_resource.file}"
-  cmd+=" -r #{@new_resource.region}"
+  cmd+=" -r #{@new_resource.region}" if @new_resource.region
   result=Mixlib::ShellOut.new(cmd, timeout: @new_resource.timeout).run_command
   Chef::Log.info "cmd:#{cmd}, STDOUT:#{result.stdout}, STDERR:#{result.stderr}"
   result.error!

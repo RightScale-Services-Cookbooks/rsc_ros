@@ -8,6 +8,6 @@ rsc_ros node['rsc_ros']['destination'] do
   file              node['rsc_ros']['file']
   destination       node['rsc_ros']['destination']
   region            node['rsc_ros']['region']
-  timeout            node['rsc_ros']['timeout']
+  timeout           node['rsc_ros']['timeout']
   action            :download
 end

@@ -8,7 +8,7 @@ Requirements
 This cookbook primarily depends on the [fog](http://fog.io) library. This cookbook will install fog and dependencies at boot time.
 
 
-**NOTE: This cookbook depends on *version 1.29.0* of fog. If you are using a default *v14.1.0* RightScale ServerTemplate, then you must update your *RubyGems* repo in your ServerTemplate to at least *2015-04-23* so that this version of fog can be installed.**
+**NOTE: This cookbook depends on *version 1.36.0* of fog. If you are using a default *v14.1.0* RightScale ServerTemplate, then you must update your *RubyGems* repo in your ServerTemplate to at least *2015-04-23* so that this version of fog can be installed.**
 
 This cookbook has been verified to work with:
 * Ubuntu 14.04
@@ -37,7 +37,7 @@ Inputs
 | `rsc_ros/bucket`           | Bucket / container to download remote file.                                 |
 | `rsc_ros/file`             | File to download from remote container.                                     |
 | `rsc_ros/destination`      | Location on local instance to download file (ex: `/var/tmp/archive.tar.gz)` |
-| `rsc_ros/region`           | The cloud region to use.  (ex: us-west-2)                                   |
+| `rsc_ros/region`           | The AWS region to use.  (ex: us-west-2)                                   |
 | `rsc_ros/timeout`          | provide a timeout to the command.  default is 1200s                         |
 
 Usage

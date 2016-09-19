@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby
+#!/usr/bin/env /opt/chef/embedded/bin/ruby
 
 require 'rubygems'
 require 'fog'
@@ -55,7 +55,7 @@ class MyCLI
     :short       => "-r region",
     :long        => "--region region",
     :required    => false,
-    :description => "cloud region: us-west-1, us-west-2 etc"
+    :description => "AWS Region: us-east-1, us-west-2 etc"
 
   option :help,
     :short        => "-h",
