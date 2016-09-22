@@ -24,6 +24,7 @@ suites:
         bucket: "rightscale-services"
         file: "kitchen/docs.tar.bz2"
         destination: "/tmp/archive_download.tar.bz2"
+        region: us-east-1
 
   - name: google
     run_list:
