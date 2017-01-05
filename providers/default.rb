@@ -1,5 +1,6 @@
 require 'mixlib/shellout'
 use_inline_resources
+provides :rsc_ros
 
 action :download do
   cmd = '/usr/local/bin/ros.rb'

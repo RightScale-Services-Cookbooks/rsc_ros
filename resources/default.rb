@@ -1,3 +1,5 @@
+provides :rsc_ros
+resource_name :rsc_ros
 actions :download, :upload
 default_action :download
 
