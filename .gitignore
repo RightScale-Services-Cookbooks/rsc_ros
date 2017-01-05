@@ -1,16 +1,26 @@
 .vagrant
+Berksfile.lock
+*~
+*#
+.#*
+\#*#
+.*.sw[a-z]
+*.un~
 /cookbooks
-.gems
-.rbenv-gemsets
+cache_dir
 
 # Bundler
+Gemfile.lock
 bin/*
 .bundle/*
-Gemfile.lock
 
-# Berkshelf
-Berksfile.lock
-
-# Kitchen
+VERSION
 .kitchen/
 .kitchen.local.yml
+
+doc/
+.yardoc/
+berks-cookbooks/
+knife.rb
+syntaxcache/
+coverage/

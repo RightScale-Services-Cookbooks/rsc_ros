@@ -1,4 +1,4 @@
-include_recipe "rsc_ros::default"
+include_recipe 'rsc_ros::default'
 
 rsc_ros node['rsc_ros']['file'] do
   storage_provider  node['rsc_ros']['storage_provider']
@@ -7,6 +7,6 @@ rsc_ros node['rsc_ros']['file'] do
   bucket            node['rsc_ros']['bucket']
   file              node['rsc_ros']['file']
   region            node['rsc_ros']['region']
-  timeout            node['rsc_ros']['timeout']
-  action            :upload
+  timeout node['rsc_ros']['timeout']
+  action :upload
 end

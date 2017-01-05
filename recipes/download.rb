@@ -1,4 +1,4 @@
-include_recipe "rsc_ros::default"
+include_recipe 'rsc_ros::default'
 
 rsc_ros node['rsc_ros']['destination'] do
   storage_provider  node['rsc_ros']['storage_provider']
