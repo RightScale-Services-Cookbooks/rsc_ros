@@ -17,17 +17,17 @@ end
 # Install gem deps
 node['rsc_ros']['gems'].each_pair do |g, v|
   gem_package g do
-    #gem_binary "/usr/bin/gem"
+    # gem_binary "/usr/bin/gem"
     version v
-    options("--no-rdoc --no-ri")
+    options('--no-rdoc --no-ri')
     action :install
   end
 end
 
-cookbook_file "/usr/local/bin/ros.rb" do
-  source "ros.rb"
-  owner "root"
-  group "root"
+cookbook_file '/usr/local/bin/ros.rb' do
+  source 'ros.rb'
+  owner 'root'
+  group 'root'
   mode 0755
   action :create
 end

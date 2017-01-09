@@ -3,6 +3,10 @@ rsc_ros CHANGELOG
 
 This file is used to list changes made in each version of the rsc_ros cookbook.
 
+2.0.0
+-----
+- chef-12 update
+
 0.7.0
 -----
 - remove ruby install, use chef embedded ruby instead

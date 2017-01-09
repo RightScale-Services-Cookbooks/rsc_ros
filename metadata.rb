@@ -4,70 +4,73 @@ maintainer_email 'ps@rightscale.com'
 license          'All rights reserved'
 description      'Installs/Configures rsc_ros'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '0.7.0'
+version          '2.0.0'
+issues_url 'https://github.com/RightScale-Services-Cookbooks/rsc_ros/issues' if respond_to?(:issues_url)
+source_url 'https://github.com/RightScale-Services-Cookbooks/rsc_ros' if respond_to?(:source_url)
+chef_version '>= 12.0' if respond_to?(:chef_version)
 
-%w{ centos ubuntu }.each do |os|
+%w( centos ubuntu ).each do |os|
   supports os
 end
 
-recipe 'rsc_ros::default'       , 'Install and configure Fog.'
-recipe 'rsc_ros::download'      , 'Download file from bucket.'
-recipe 'rsc_ros::upload'        , 'Upload file from filesystem'
+recipe 'rsc_ros::default', 'Install and configure Fog.'
+recipe 'rsc_ros::download', 'Download file from bucket.'
+recipe 'rsc_ros::upload', 'Upload file from filesystem'
 
 attribute 'rsc_ros/storage_provider',
-  :display_name => 'Storage Provider',
-  :description  => 'Storage provider which houses file to download.',
-  :type         => 'string',
-  :recipes      => ['rsc_ros::download','rsc_ros::upload'],
-  :choice       => ['aws', 'google', 'rackspace'],
-  :required     => 'required'
+  display_name: 'Storage Provider',
+  description: 'Storage provider which houses file to download.',
+  type: 'string',
+  recipes: ['rsc_ros::download', 'rsc_ros::upload'],
+  choice: %w(aws google rackspace),
+  required: 'required'
 
 attribute 'rsc_ros/access_key',
-  :display_name => 'Access Key',
-  :description  => 'Access key to use with storage provider.',
-  :type         => 'string',
-  :recipes      => ['rsc_ros::download','rsc_ros::upload'],
-  :required     => 'required'
+  display_name: 'Access Key',
+  description: 'Access key to use with storage provider.',
+  type: 'string',
+  recipes: ['rsc_ros::download', 'rsc_ros::upload'],
+  required: 'required'
 
 attribute 'rsc_ros/secret_key',
-  :display_name => 'Secret Key',
-  :description  => 'Secret key to use with storage provider.',
-  :type         => 'string',
-  :recipes      => ['rsc_ros::download','rsc_ros::upload'],
-  :required     => 'required'
+  display_name: 'Secret Key',
+  description: 'Secret key to use with storage provider.',
+  type: 'string',
+  recipes: ['rsc_ros::download', 'rsc_ros::upload'],
+  required: 'required'
 
 attribute 'rsc_ros/bucket',
-  :display_name => 'Bucket',
-  :description  => 'Bucket from where to download data.',
-  :type         => 'string',
-  :recipes      => ['rsc_ros::download','rsc_ros::upload'],
-  :required     => 'required'
+  display_name: 'Bucket',
+  description: 'Bucket from where to download data.',
+  type: 'string',
+  recipes: ['rsc_ros::download', 'rsc_ros::upload'],
+  required: 'required'
 
 attribute 'rsc_ros/file',
-  :display_name => 'File',
-  :description  => 'File to download/upload.',
-  :type         => 'string',
-  :recipes      => ['rsc_ros::download','rsc_ros::upload'],
-  :required     => 'required'
+  display_name: 'File',
+  description: 'File to download/upload.',
+  type: 'string',
+  recipes: ['rsc_ros::download', 'rsc_ros::upload'],
+  required: 'required'
 
 attribute 'rsc_ros/destination',
-  :display_name => 'Destination',
-  :description  => 'Full path where file is to be downloaded (ex: /var/tmp/archive.tar.gz).',
-  :type         => 'string',
-  :recipes      => ['rsc_ros::download'],
-  :required     => 'required'
+  display_name: 'Destination',
+  description: 'Full path where file is to be downloaded (ex: /var/tmp/archive.tar.gz).',
+  type: 'string',
+  recipes: ['rsc_ros::download'],
+  required: 'required'
 
-  attribute 'rsc_ros/region',
-    :display_name => 'Region',
-    :description  => 'Cloud region',
-    :type         => 'string',
-    :recipes      => ['rsc_ros::download','rsc_ros::upload'],
-    :required     => 'optional'
+attribute 'rsc_ros/region',
+  display_name: 'Region',
+  description: 'Cloud region',
+  type: 'string',
+  recipes: ['rsc_ros::download', 'rsc_ros::upload'],
+  required: 'optional'
 
-  attribute 'rsc_ros/timeout',
-    :display_name => 'Timeout',
-    :description  => 'command timeout',
-    :type         => 'string',
-    :default	  => '1200',
-    :recipes      => ['rsc_ros::download','rsc_ros::upload'],
-    :required     => 'optional'
+attribute 'rsc_ros/timeout',
+  display_name: 'Timeout',
+  description: 'command timeout',
+  type: 'string',
+  default: '1200',
+  recipes: ['rsc_ros::download', 'rsc_ros::upload'],
+  required: 'optional'
